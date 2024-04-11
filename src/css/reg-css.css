@@ -1,0 +1,395 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+}
+
+.reg-container,
+.popup-box {
+	border-radius: 10px;
+}
+
+.reg-container {
+	display: flex;
+	justify-content: space-between;
+	/* width: 700px; */
+	box-shadow: 5px 20px 50px #000;
+	overflow: clip;
+}
+
+.balance {
+	color: #302B63;
+	font-weight: 900;
+	font-size: 2rem;
+}
+
+.welcome-info {
+	width: 300px;
+	display: grid;
+	place-content: center;
+	padding-inline: 3rem;
+}
+
+.welcome-text {
+	color: white;
+	line-height: 1.1;
+	font-weight: 900;
+	font-size: 3vw;
+}
+
+.login-text {
+	color: var(--orange);
+}
+
+.signup-text {
+	color: #2196F3;
+}
+
+.main {
+	width: 350px;
+	height: 500px;
+	background: red;
+	overflow: hidden;
+	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+
+}
+
+#chk {
+	display: none;
+}
+
+.signup {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+label {
+	color: #fff;
+	font-size: 2.3em;
+	justify-content: center;
+	display: flex;
+	margin: 60px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: .5s ease-in-out;
+}
+
+input {
+	width: 60%;
+	height: 20px;
+	background: #e0dede;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+.full-input{
+	width: 90%;
+}
+
+button {
+	width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #573b8a;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #6d44b8;
+}
+
+.login {
+	height: 460px;
+	background: #eee;
+	border-radius: 60% / 10%;
+	transform: translateY(-180px);
+	transition: .8s ease-in-out;
+}
+
+.login label {
+	color: #573b8a;
+	transform: scale(.6);
+}
+
+#chk:checked~.login {
+	transform: translateY(-500px);
+}
+
+#chk:checked~.login label {
+	transform: scale(1);
+}
+
+#chk:checked~.signup label {
+	transform: scale(.6);
+}
+
+
+/* Dashboard Css */
+
+
+/* Loading dot */
+
+/* HTML: <div class="loader"></div> */
+.submit-btn {
+	display: grid;
+	place-items: center;
+}
+
+.loader {
+	width: 30px;
+	aspect-ratio: 2;
+	--_g: no-repeat radial-gradient(circle closest-side, #fff 90%, #0000);
+	background:
+		var(--_g) 0% 50%,
+		var(--_g) 50% 50%,
+		var(--_g) 100% 50%;
+	background-size: calc(100%/3) 50%;
+	animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+	20% {
+		background-position: 0% 0%, 50% 50%, 100% 50%
+	}
+
+	40% {
+		background-position: 0% 100%, 50% 0%, 100% 50%
+	}
+
+	60% {
+		background-position: 0% 50%, 50% 100%, 100% 0%
+	}
+
+	80% {
+		background-position: 0% 50%, 50% 50%, 100% 100%
+	}
+}
+
+
+/* remaining list */
+
+.remaining-list {
+	/* margin-left: 1rem; */
+	position: relative;
+	isolation: isolate;
+
+	&::before {
+		position: absolute;
+		left: 1.05rem;
+		content: '';
+		width: 1px;
+		height: 0%;
+		background-color: #ccc;
+		z-index: -1;
+		animation: grow 700ms 800ms forwards ;
+	}
+
+	.list {
+		--number: 0;
+		line-height: 3;
+		font-size: .85rem;
+		translate: 100% 0;
+		opacity: 0;
+		animation: fade-in-right 150ms calc((var(--number) * 100ms) + 500ms) ease-in forwards;
+	}
+
+	.list::before {
+		content: '\2713';
+		display: grid;
+		place-content: center;
+		width: 2rem;
+		height: 2rem;
+		margin-right: .4rem;
+		border: 2px solid #ccc;
+		background: #fff;
+		border-radius: 50%;
+		float: left;
+	}
+
+	.list.marked {
+		color: green;
+	}
+
+	.list.not-marked {
+		display: inline;
+		color: red;
+		background-image: linear-gradient(red, red);
+	}
+
+	.list.not-marked::before {
+		content: '\01F5D9';
+	}
+}
+
+
+/* popup css */
+.remaining-cont {
+	display: flex;
+	justify-content: center;
+}
+
+.steps-remaining,.list.not-marked{
+	background-size: 0% 1px;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	transition: background-size 200ms;
+	cursor: pointer;
+
+	&:hover {
+		background-size: 100% 1px;
+	}
+}
+
+.steps-remaining {
+	font-size: .85rem;
+	display: inline;
+	color: red;
+	text-align: center;
+	background-image: linear-gradient(red, red);
+}
+
+.popup-environ {
+	background: #000000ac;
+	--webkit-backdrop-filter: blur(1rem);
+	backdrop-filter: blur(1rem);
+	position: fixed;
+	inset: 0;
+	z-index: 100;
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	opacity: 0;
+	animation: fade-in forwards 300ms;
+}
+
+.popup-box {
+	overflow: clip;
+	max-width: 40rem;
+	background: #fff;
+	margin-top: 3rem;
+	padding: 2.5rem;
+	opacity: 0;
+	translate: 0 -100%;
+	animation: drop forwards 200ms 300ms;
+}
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-in-right {
+	to {
+		translate: 0 0;
+		opacity: 1;
+	}
+}
+
+@keyframes grow {
+	to{
+		height: 80%;
+	}
+	
+}
+
+@keyframes drop {
+	to {
+		translate: 0 0;
+		opacity: 1;
+	}
+}
+
+/* Set withdrawal css */
+
+/* HTML: <div class="loader"></div> */
+.dotted-spinner {
+	width: 50px;
+	--b: 8px; 
+	aspect-ratio: 1;
+	border-radius: 50%;
+	padding: 1px;
+	background: conic-gradient(#0000 10%,#333) content-box;
+	-webkit-mask:
+	  repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+	  radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+	-webkit-mask-composite: destination-in;
+			mask-composite: intersect;
+	animation:l4 1s infinite steps(10);
+  }
+  @keyframes l4 {to{transform: rotate(1turn)}}
+
+.date-header{
+	font-size: 2rem;
+	font-weight: 700;
+}
+.note-text{
+	color: gray;
+}
+
+.time-div{
+   display: grid;
+   grid-auto-flow: column;
+   translate: -50%;
+
+	.info-div{
+      width: 100%;
+	}
+	.loading-div{
+		display: grid;
+		place-content: center;
+		width: 100%;
+	}
+}
+
+.choose-button{
+	width: fit-content;
+	padding-inline: 1rem;
+	margin: 0;
+	margin-left: auto;
+}
+
+.choose-date{
+	margin-block: 4rem;
+	display: flex;
+	gap:1rem ;
+
+	input{
+		margin: 0;
+		width: 25%;
+		padding-block: .3rem;
+
+	}
+	.select-period{
+		width: 100%;
+	}
+}
+
+.select-period{
+	padding-left: .5rem;
+}
+
+.select-period > option{
+	padding-block: .5rem;
+}
